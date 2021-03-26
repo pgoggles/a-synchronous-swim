@@ -5,7 +5,19 @@
   //
   // TODO: build the swim command fetcher here
   //
-
+  const ajaxGetSwimCommand = (cb) => {
+    $.ajax({
+      type: 'GET',
+      url: serverUrl + '/SwimCommand',
+      contentType: 'application/json',
+      success: (cb) => {
+        cb(data);
+      }
+      error: () => {
+        console.log('Could not retrieve swim command')
+      }
+    });
+  }
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
   // Note: remember to fix the URL below.
