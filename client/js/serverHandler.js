@@ -1,5 +1,3 @@
-// const httpHandler = require('./httpHandler');
-// const swimTeam = require('./swimTeam');
-setInterval(ajaxGetSwimCommand.bind(this, SwimTeam.move), 50);
+setInterval(ajaxGET.bind(this, SwimTeam.move, '/SwimCommand'), 500);
 
 

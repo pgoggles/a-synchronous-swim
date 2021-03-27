@@ -3,18 +3,20 @@ const serverUrl = 'http://127.0.0.1:3000';
   //
   // TODO: build the swim command fetcher here
   //
-  const ajaxGetSwimCommand = (cb) => {
+
+
+  const ajaxGET = (cb, urlMethod, dataType = '') => {
     $.ajax({
       type: 'GET',
       data: {},
-      url: serverUrl + '/SwimCommand',
+      url: serverUrl + urlMethod,
       contentType: 'application/json',
+      dataType: dataType,
       success: (data) => {
         cb(data);
-        console.log(data);
       },
       error: () => {
-        console.log('Could not retrieve swim command')
+        console.log('Could not retrieve data')
       }
     });
   }
@@ -26,13 +28,14 @@ const serverUrl = 'http://127.0.0.1:3000';
   // Note: remember to fix the URL below.
   /////////////////////////////////////////////////////////////////////
 
+
   const ajaxFileUplaod = (file) => {
     var formData = new FormData();
     formData.append('file', file);
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: serverUrl + '/UploadImage',
       cache: false,
       contentType: false,
       processData: false,
