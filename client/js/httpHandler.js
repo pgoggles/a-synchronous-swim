@@ -1,6 +1,4 @@
-(function() {
-
-  const serverUrl = 'http://127.0.0.1:3000';
+const serverUrl = 'http://127.0.0.1:3000';
 
   //
   // TODO: build the swim command fetcher here
@@ -8,16 +6,21 @@
   const ajaxGetSwimCommand = (cb) => {
     $.ajax({
       type: 'GET',
+      data: {},
       url: serverUrl + '/SwimCommand',
       contentType: 'application/json',
-      success: (cb) => {
+      success: (data) => {
         cb(data);
-      }
+        console.log(data);
+      },
       error: () => {
         console.log('Could not retrieve swim command')
       }
     });
   }
+
+(function() {
+
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
   // Note: remember to fix the URL below.

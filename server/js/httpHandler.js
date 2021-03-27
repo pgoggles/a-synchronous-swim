@@ -14,7 +14,7 @@ module.exports.backgroundImageFile = path.join('.', 'background.jpg');
 // };
 
 module.exports.router = (req, res, next = ()=>{}) => {
-  console.log('Serving request type ' + req.method + ' for url ' + req.url);
+  //console.log('Serving request type ' + req.method + ' for url ' + req.url);
   res.writeHead(200, headers);
   if (req.url === '/SwimCommandRandom'){
     var moves = ['up', 'down', 'left', 'right']
